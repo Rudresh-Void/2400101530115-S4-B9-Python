@@ -21,8 +21,23 @@ function clac(a,b)
 {
   return a+b;
 }
+
+function apple()
+{
+  alert("You clicked on Apple")
+}
+
+function banana()
+{
+  alert("You clicked on Banana")
+}
+
   return (
     <div>
+      <h1>Welcome in new project.</h1>
+      <button onClick={apple}>Apple</button>
+      <button onClick={banana}>Banana</button>
+
       <h1>Secret Project</h1>
       <h3>The value of variable is {name}</h3>
       <h3>By using Let {x+y}</h3>
