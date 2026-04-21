@@ -4,49 +4,57 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  
-  const name = "Infinity"
-  let x=10
-  let y=20
-  const p=10
-  const q=25
-  var r=10
-  var s=23
+  const [count,setCount]=useState(0);
+  const [show, setShow] = useState(true);
+  const [text, setText] = useState("");
+  const [c,s]=useState(0);
 
-  function fun()
-{
-  return "Rudresh"
-}
-function clac(a,b)
-{
-  return a+b;
-}
-
-function apple()
-{
-  alert("You clicked on Apple")
-}
-
-function banana()
-{
-  alert("You clicked on Banana")
-}
+  const incre=()=> {
+    setCount(p=>p+1);
+  };
+  const decre=()=>{
+    setCount(p=>p-1);
+  };
+  const reset=()=>{
+    setCount(0);
+  };
+  const toggleText = () => {
+    setShow(pr=>!pr);
+  };
+  const handleChange = (e) => {
+    setText(e.target.value);
+  };
+  const L=()=> {
+    s(p=>p+1);
+  };
+  const D=()=>{
+    s(p=>p-1);
+  };
 
   return (
     <div>
-      <h1>Welcome in new project.</h1>
-      <button onClick={apple}>Apple</button>
-      <button onClick={banana}>Banana</button>
-
-      <h1>Secret Project</h1>
-      <h3>The value of variable is {name}</h3>
-      <h3>By using Let {x+y}</h3>
-      <h3>By using const {p+q}</h3>
-      <h3>By using Var {r+s}</h3>
-      <h3>Name is {fun()}</h3>
-      <h3>The value {clac(87,90)}</h3>
+      <button onClick={decre}>-</button>
+      <button onClick={incre}>+</button>
+      <button onClick={reset}>Reset</button>
+      <span style={{ margin: "0 10px" }}>{count}</span>
+      <br /><br />
+      <button onClick={toggleText}>
+        {show ? "Hide":"Show"}
+      </button>
+      {show && <p>MAGIC</p>}
+      <br /><br />
+      <input 
+        type="text" 
+        value={text} 
+        onChange={handleChange} 
+        placeholder="Type something..."
+      />
+      <p>USER:{text}</p>
+      <button onClick={L}>Like</button>
+      <button onClick={D}>Dislike</button>
+      <span style={{ margin: "0 10px" }}>{c}</span>
     </div>
-  )
+  );
 }
 
 export default App
